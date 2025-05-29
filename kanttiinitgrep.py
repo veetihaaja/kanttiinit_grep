@@ -10,7 +10,7 @@ def gethtml(url):
         htmlstr = rawhtml.decode("utf8")
         req.close()
     except:
-        print("Error fetching the URL, stopping script")
+        print("Error fetching the URL, stopping script (possibly no internet connection)")
         htmlstr = ""
         sys.exit()
     return htmlstr
