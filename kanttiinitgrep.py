@@ -68,6 +68,9 @@ def parseFoodData(htmlstr, restaurantsToDisplay):
                         foodFinalData[restaurant] += " G"
                     if "lactose-free" in flag:
                         foodFinalData[restaurant] += " L"
+
+                # strip any possible trailing list dividers
+                foodFinalData[restaurant] = foodFinalData[restaurant].replace("</li>", "")
                 foodFinalData[restaurant] += "\n"
 
     return foodFinalData
