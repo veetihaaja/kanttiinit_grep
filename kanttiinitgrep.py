@@ -1,28 +1,19 @@
 import urllib.request
-from time import strftime, localtime, sleep
+from time import strftime, localtime
 import sys
 
 def gethtml(url):
 
-    maxAttempts = 5  # maximum number of attempts to fetch the URL
-    sleepTime = 60  # seconds
-
-    for attempt in range(maxAttempts):
-        try:
-            req = urllib.request.urlopen(url)
-            rawhtml = req.read()
-            htmlstr = rawhtml.decode("utf8")
-            req.close()
-            return htmlstr
-        except:
-            print(f"Error fetching the URL, retrying in {sleepTime} seconds...")
-            htmlstr = ""
-            if attempt == maxAttempts - 1:
-                print(f"Failed to fetch the URL after {maxAttempts} attempts.")
-                sys.exit()
-            # wait a minute before retrying
-            sleep(sleepTime)
-            continue
+    try:
+        req = urllib.request.urlopen(url)
+        rawhtml = req.read()
+        htmlstr = rawhtml.decode("utf8")
+        req.close()
+    except:
+        print("Error fetching the URL, stopping script (possibly no internet connection)")
+        htmlstr = ""
+        sys.exit()
+    return htmlstr
 
 def parseFoodData(htmlstr, restaurantsToDisplay):
     """
@@ -77,9 +68,6 @@ def parseFoodData(htmlstr, restaurantsToDisplay):
                         foodFinalData[restaurant] += " G"
                     if "lactose-free" in flag:
                         foodFinalData[restaurant] += " L"
-
-                # strip any possible trailing list dividers
-                foodFinalData[restaurant] = foodFinalData[restaurant].replace("</li>", "")
                 foodFinalData[restaurant] += "\n"
 
     return foodFinalData
