@@ -8,6 +8,11 @@ Instructions:
 
 - make a comma-separated list of restaurants you want to queue to the environmental variables "RESTAURANTS"
 
+- python3 -m venv .venv
+	- source .venv/bin/activate
+
+- pip install requirements.txt
+
 - chmod +777 getdata.sh
 
 - ./getdata.sh, and check data.txt for success
