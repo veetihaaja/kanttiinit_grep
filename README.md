@@ -1,6 +1,18 @@
-A script to fetch Unicafe food data from Kanttiinit.fi (more precisely folio.kanttiinit.fi).
+A script to fetch food data from Kanttiinit.fi API kitchen.kanttiinit.fi
 
-- Supported restaurants are Chemicum, Exactum and Chemicum Opettajien ravintola
-- Displays (V)egan, (G)luten-free and (L)actose-free next to foods
-- Throws error and aborts if the HTML fetch fails
-- Correctly parses when restaurant has "Ei ruokalistaa."
+Instructions:
+
+- After first trial run, or by using the precompiled list, check list of restaurants from restaurants.txt
+
+- touch .env, or rename .env.example to just .env
+
+- make a comma-separated list of restaurants you want to queue to the environmental variables "RESTAURANTS"
+
+- python3 -m venv .venv
+	- source .venv/bin/activate
+
+- pip install -r requirements.txt
+
+- chmod +777 getdata.sh
+
+- ./getdata.sh, and check data.txt for success
