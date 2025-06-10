@@ -10,13 +10,11 @@ RETRY_TIMES=10 # number of retries
 CURRENT_DIR=$(pwd)
 
 #!/bin/bash
-
 while true; do
     wget -q --spider http://google.com
     if [ $? -eq 0 ]; then
-        #internet connection is available
-        python3 $CURRENT_DIR/kanttiinitgrep.py > $CURRENT_DIR/data.txt
-        exit 0
+        python3 $CURRENT_DIR/getMap.py 
+        break
     else
         sleep $TIME_TO_SLEEP
         RETRY_TIMES=$((RETRY_TIMES - 1))
@@ -24,6 +22,11 @@ while true; do
             echo "No internet connection after multiple attempts. Exiting." > $CURRENT_DIR/data.txt
             exit 1
         fi
-        #echo "No internet connection. Retrying in $TIME_TO_SLEEP seconds..."
     fi
+done 
+
+while true; do
+    python3 $CURRENT_DIR/kanttiinitgrep.py > $CURRENT_DIR/data.txt
+    sleep 3600
+    #Sleep for 1 hour before running the script again, checking only the restaurants which are listed in .env
 done

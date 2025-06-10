@@ -3,26 +3,30 @@ import requests
 import json
 import time
 
-def get_restaurants():
-    #Get the full list of restaurants from the kanttiinit.fi API, along with their menus.
-    #The API is not documented, so this is a best-effort attempt to scrape the data.
+def get_menus(wanted):
     url1 = "https://kitchen.kanttiinit.fi/restaurants/"
     url2 = "/menu"
 
-    map = {} #Mapping of restaurant names to their IDs, if needed
-    foods = {}  #Actual food items, indexed by restaurant name
+    menus = {} 
 
-    for i in range(1, 100):  # Assuming there are at max 100 restaurants (as is the case 9/6/25):
+    entries =  {}
+    with open("restaurants.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line:
+                a, b = line.split(",")
+                entries[a.strip()] = int(b.strip())
 
-        time.sleep(0.1) #Add small delay to avoid overwhelming the server
+    for a in wanted:  
+
+        time.sleep(0.1) 
 
         try:
-            url = url1+str(i)+url2
+            url = url1+str(entries[a.strip()])+url2
             response = requests.get(url)
             response.raise_for_status()
             data = response.json() 
 
-            map[data['name'].strip()] = int(data['id'])
             if data['menus']:
                 #If a menu exists, add its relevant items to the foods dictionary as a print-ready string
                 ruokalista = "" #Construct a printable list of food items with their properties
@@ -31,16 +35,10 @@ def get_restaurants():
                     ruokalista += item['title'] + " "
                     ruokalista += ", ".join(item['properties']) 
                     ruokalista += "\n"
-                foods[data['name'].strip()] = ruokalista
+                menus[data['name'].strip()+":\n"] = ruokalista
             else:
-                foods[data['name'].strip()] = "Ei ruokaa tänään\n"
+                menus[data['name'].strip()+":\n"] = "Ei ruokaa tänään\n"
         except (requests.RequestException, ValueError):
             continue  
     
-    res = ""
-    for key in map.keys():
-        res += f"{key.strip()}\n"
-    with open("restaurants.txt", "w", encoding="utf-8") as f:
-        f.write(res)
-
-    return (map, foods)
+    return(menus)

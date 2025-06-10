@@ -1,4 +1,4 @@
-A script to fetch food data from Kanttiinit.fi API kitchen.kanttiinit.fi
+A script to fetch food data from Kanttiinit.fi API kitchen.kanttiinit.fi. getMap.py fetches the current mapping between all restaurants and their ID, and menuGet.py gets the relevant menus specified in .env.
 
 Instructions:
 
