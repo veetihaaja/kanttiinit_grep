@@ -13,6 +13,6 @@ Instructions:
 
 - pip install -r requirements.txt
 
-- chmod +777 getdata.sh
+- chmod +r getdata.sh
 
 - ./getdata.sh, and check data.txt for success
