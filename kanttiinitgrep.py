@@ -1,19 +1,16 @@
 
 import dotenv
 import os
-from restaurantGet import get_restaurants
+from menuGet import get_menus
 dotenv.load_dotenv()
 res = os.getenv("RESTAURANTS").split(",")
 
-map, foods = get_restaurants()
-wanted_list = ""
+menus = get_menus(res)
 
-for a in res:
-    if a.strip() in foods.keys():
-        wanted_list += a.strip() + "\n"
-        wanted_list += foods[a.strip()]
-        wanted_list += "\n"
-    else:
-        continue
+total = ""
+for key,val in menus.items():
+    total += str(key)
+    total += str(val)
+    total += "\n"
 
-print(wanted_list)
+print(total)

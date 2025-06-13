@@ -1,54 +1,54 @@
-Kvarkki
-Tietotekniikantalo
-Täffä
-Alvari
-TUAS
-Aalto Valimo
-Kaivopiha
-Cafe Portaali
-Metsätalo
-Olivia
-Ravintola Serpens
-UniCafe Päärakennus
-Ravintola Fredrika Päärakennus
-Hanken
-Soc&Kom
-Hämäläis-Osakunta
-Porthania
-Chemicum
-Exactum
-Physicum
-Biokeskus 3
-Korona
-Viikuna
-Ladonlukko
-Tähkä
-Mau-kas
-Kookos
-Dipoli Ravintolat
-Biomedicum
-UniCafe Meilahti
-Kipsari Väre
-A Bloc
-Musiikkitalon Klubi
-Metropolia Leiritie
-DIAK-Kalasatama
-Unicafe Ruskeasuo
-Ravintola Agora
-Arvo
-Pesco & Vege Topelias
-Ravintola Oliver
-Rotunda
-Metropolia Myllypuro
-Luova
-Töölö 37
-Arabianranta
-Helsingin yliopisto Päärakennus
-Myöhä Café & Bar
-Chemicum Opettajien ravintola
-Mau-kas Nova
-Kaisa-talo
-Infokeskus alakerta
-Tempo
-Biokeskus
-Arcada
+Kvarkki,1
+Tietotekniikantalo,2
+Täffä,3
+Alvari,5
+TUAS,7
+Aalto Valimo,8
+Kaivopiha,12
+Cafe Portaali,13
+Metsätalo,16
+Olivia,17
+Ravintola Serpens,18
+UniCafe Päärakennus,19
+Ravintola Fredrika Päärakennus,20
+Hanken,24
+Soc&Kom,25
+Hämäläis-Osakunta,26
+Porthania,27
+Chemicum,32
+Exactum,33
+Physicum,34
+Biokeskus 3,35
+Korona,36
+Viikuna,37
+Ladonlukko,38
+Tähkä,39
+Mau-kas,41
+Kookos,42
+Dipoli Ravintolat,45
+Biomedicum,47
+UniCafe Meilahti,49
+Kipsari Väre,50
+A Bloc,52
+Musiikkitalon Klubi,53
+Metropolia Leiritie,54
+DIAK-Kalasatama,55
+Unicafe Ruskeasuo,56
+Ravintola Agora,57
+Arvo,59
+Pesco & Vege Topelias,61
+Ravintola Oliver,62
+Rotunda,63
+Metropolia Myllypuro,65
+Luova,66
+Töölö 37,67
+Arabianranta,68
+Helsingin yliopisto Päärakennus,69
+Myöhä Café & Bar,71
+Chemicum Opettajien ravintola,72
+Mau-kas Nova,73
+Kaisa-talo,74
+Infokeskus alakerta,75
+Tempo,80
+Biokeskus,81
+Arcada,82
