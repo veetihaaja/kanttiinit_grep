@@ -35,9 +35,9 @@ def get_menus(wanted):
                     ruokalista += item['title'] + " "
                     ruokalista += ", ".join(item['properties']) 
                     ruokalista += "\n"
-                menus[data['name'].strip()+":\n"] = ruokalista
+                menus[data['name'].strip()+"\n"] = ruokalista
             else:
-                menus[data['name'].strip()+":\n"] = "Ei ruokaa tänään\n"
+                menus[data['name'].strip()+"\n"] = "Ei ruokaa tänään\n"
         except (requests.RequestException, ValueError):
             continue  
     
