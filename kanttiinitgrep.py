@@ -21,4 +21,8 @@ for index,(key,val) in enumerate(menus.items()):
         total += str(val)
         total += "\n"
 
+for line in total.split("\n"):
+    if len(line) > 60:
+        total = total.replace(line, line[:60] + "\n" + line[60:])
+
 print(total.strip("\n"))
