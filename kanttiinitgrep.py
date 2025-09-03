@@ -10,6 +10,8 @@ res = os.getenv("RESTAURANTS").split(",")
 
 menus = get_menus(res)
 
+textWrapLength = 55
+
 total = ""
 for index,(key,val) in enumerate(menus.items()):
     if index == 0:
@@ -22,7 +24,7 @@ for index,(key,val) in enumerate(menus.items()):
         total += "\n"
 
 for line in total.split("\n"):
-    if len(line) > 60:
-        total = total.replace(line, line[:60] + "\n" + line[60:])
+    if len(line) > textWrapLength:
+        total = total.replace(line, line[:textWrapLength] + "-\n" + line[textWrapLength:])
 
 print(total.strip("\n"))
